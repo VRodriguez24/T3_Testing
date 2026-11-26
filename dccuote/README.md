@@ -89,8 +89,10 @@ La suite tiene exactamente diez tests: cuatro `@manual` y seis `@ia @claude`. El
 | [`bug-etiquetas-residuales.spec.ts`](./web/tests/ia/bug-etiquetas-residuales.spec.ts): **bug** de etiquetas residuales | `@ia @claude` |
 
 ### Uso de IA
-- Los seis tests `@ia @claude` se generaron con los Playwright Test Agents usando Claude Code. El plan original de Planner está sin modificaciones en [`web/tests/plan-planner.md`](./web/tests/plan-planner.md) y el plan refinado en [`web/tests/plan-final.md`](./web/tests/plan-final.md).
-- Los tres tests `@manual` adicionales al ejemplo se basan en escenarios propuestos por Planner (sección 2 de su plan). Se desarrollaron tomando como referencia los ejemplos existentes, con apoyo de Claude en comprensión, revisión y validación.
+
+- Los seis tests `@ia @claude` se generaron mediante **Playwright Test Agents**, utilizando Claude Code. El plan original de Planner se conserva sin modificaciones en [`web/tests/plan-planner.md`](./web/tests/plan-planner.md), y el plan refinado se encuentra en [`web/tests/plan-final.md`](./web/tests/plan-final.md).
+
+- Los tres tests `@manual` adicionales al ejemplo fueron **escritos manualmente por el estudiante**, quien desarrolló sus pasos y aserciones a partir de escenarios propuestos por Planner (sección 2 de su plan), tomando como referencia los ejemplos existentes. Claude Code se utilizó como herramienta de apoyo para comprender Playwright y el funcionamiento de la aplicación, revisar el código, depurar problemas y validar las ejecuciones. Estos tests no fueron generados mediante Playwright Test Generator.
 
 ### Bugs detectados
 Estas dos pruebas afirman el comportamiento correcto, así que **fallan intencionalmente** mientras el defecto exista:
