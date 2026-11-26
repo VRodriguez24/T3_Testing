@@ -51,6 +51,8 @@ Playwright compila la aplicación y levanta su propio servidor en el puerto 4173
 
 ## API Testing
 
+**Uso de IA:** Claude Code implementó las pruebas unitarias y de integración de la API.
+
 | Conjunto | Tests | Cobertura de líneas del backend |
 |---|---|---|
 | Unitarios ([`api/tests/unit/`](./api/tests/unit/)) | 107 | **100%** (272 de 272) |
@@ -100,21 +102,12 @@ Estas dos pruebas afirman el comportamiento correcto, así que **fallan intencio
 Configuramos `workers: 1` en [`playwright.config.ts`](./web/playwright.config.ts) para evitar los timeouts observados durante la ejecución paralela, sin modificar assertions ni aumentar timeouts. Todos los tests comparten además la misma base de datos.
 
 ## Entrega
-Para entregar tu tarea, genera un `.zip` con el siguiente comando, ejecutado desde la raíz del proyecto (la carpeta que contiene `api/` y `web/`):
+El `.zip` se genera desde la raíz del repositorio Git (`T3_Testing`, la carpeta que contiene `dccuote/`):
 
 ```bash
-git archive --format=zip --prefix=dccuote/ -o tarea3.zip HEAD
+git archive --format=zip -o tarea3.zip HEAD dccuote ':(exclude)**/*:Zone.Identifier' ':(exclude)**/.DS_Store'
 ```
 
-Este comando arma el `.zip` solo con los archivos que git tiene registrados, así que deja fuera automáticamente todo lo que está en los `.gitignore` (`node_modules/`, `venv/`, `htmlcov/`, etc.) y la carpeta `.git`.
+El archivo contiene únicamente la carpeta `dccuote/`, con los archivos que Git tiene registrados, y excluye los auxiliares `:Zone.Identifier` y `.DS_Store`.
 
-> ⚠️ **Importante:** el comando empaqueta tu **último commit** (`HEAD`), no el estado actual de tus archivos. Cualquier cambio que no hayas commiteado **no quedará en la entrega**. Antes de generar el `.zip`, asegúrate de commitear todo:
->
-> ```bash
-> git add .
-> git commit -m "Entrega Tarea 3"
-> ```
->
-> Puedes revisar con `git status` que no queden cambios pendientes.
-
-> 💡 **Nota:** si tu carpeta todavía no es un repositorio de git (por ejemplo, si descargaste el código como `.zip`), primero ejecuta `git init` en la raíz del proyecto y luego haz el commit de arriba.
+> ⚠️ **Importante:** el comando empaqueta el **último commit** (`HEAD`), no el estado actual de los archivos. Antes de generarlo, revise con `git status` que los cambios de la entrega estén en un commit.
